@@ -28,6 +28,7 @@
 /* Global styles */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 2.5rem;
 }
 
 body {
