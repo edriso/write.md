@@ -6,7 +6,7 @@ import { gitTips, gitExample } from "../../data/gitTips";
 
 export default function GitTipsSection({ onTry }) {
   return (
-    <section id="git-tips" className="mx-auto max-w-5xl px-6 py-20">
+    <section id="git-tips" className="mx-auto max-w-5xl px-4 sm:px-6 py-12 sm:py-20">
       <SectionHeading
         title="Git Commit Tips"
         subtitle="Write clear, consistent commit messages."
@@ -26,7 +26,7 @@ export default function GitTipsSection({ onTry }) {
         </div>
 
         {/* Example commit */}
-        <div>
+        <div className="min-w-0">
           <CodeBlock>{gitExample}</CodeBlock>
           <Button
             variant="secondary"

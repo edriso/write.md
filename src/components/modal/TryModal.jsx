@@ -36,11 +36,11 @@ export default function TryModal({ title, initialMarkdown, onClose }) {
       onClick={onClose}
     >
       <div
-        className="flex w-full max-w-4xl max-h-[85vh] flex-col rounded-xl border border-border bg-bg-card shadow-2xl"
+        className="flex w-full max-w-4xl max-h-[95vh] md:max-h-[85vh] flex-col overflow-hidden rounded-xl border border-border bg-bg-card shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="flex items-center justify-between border-b border-border px-5 py-3">
+        <div className="flex items-center justify-between border-b border-border px-4 md:px-5 py-3">
           <h2 className="font-semibold">{title}</h2>
           <div className="flex items-center gap-2">
             <button
@@ -70,14 +70,14 @@ export default function TryModal({ title, initialMarkdown, onClose }) {
         </div>
 
         {/* Split editor / preview */}
-        <div className="grid flex-1 overflow-hidden md:grid-cols-2">
+        <div className="grid flex-1 overflow-y-auto md:overflow-hidden md:grid-cols-2">
           {/* Editor */}
-          <div className="flex flex-col border-b border-border md:border-b-0 md:border-r">
-            <div className="px-5 py-2 text-xs font-medium text-text-muted uppercase tracking-wide">
+          <div className="flex flex-col border-b border-border md:border-b-0 md:border-r min-h-0 min-w-0">
+            <div className="px-4 md:px-5 py-2 text-xs font-medium text-text-muted uppercase tracking-wide">
               Markdown
             </div>
             <textarea
-              className="flex-1 resize-none bg-transparent px-5 py-3 font-mono text-sm text-text-primary outline-none min-h-[200px] md:min-h-0"
+              className="flex-1 resize-none bg-transparent px-4 md:px-5 py-3 font-mono text-sm text-text-primary outline-none min-h-[180px] md:min-h-0"
               value={markdown}
               onChange={(e) => setMarkdown(e.target.value)}
               spellCheck={false}
@@ -85,11 +85,11 @@ export default function TryModal({ title, initialMarkdown, onClose }) {
           </div>
 
           {/* Preview */}
-          <div className="flex flex-col overflow-hidden">
-            <div className="px-5 py-2 text-xs font-medium text-text-muted uppercase tracking-wide">
+          <div className="flex flex-col overflow-hidden min-h-0 min-w-0">
+            <div className="px-4 md:px-5 py-2 text-xs font-medium text-text-muted uppercase tracking-wide">
               Preview
             </div>
-            <div className="flex-1 overflow-y-auto px-5 py-3">
+            <div className="flex-1 overflow-y-auto px-4 md:px-5 py-3 min-h-[180px] md:min-h-0">
               <MarkdownPreview markdown={markdown} />
             </div>
           </div>

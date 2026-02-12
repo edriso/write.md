@@ -4,7 +4,7 @@ import { lessons } from "../../data/lessons";
 
 export default function LessonsSection({ onTry }) {
   return (
-    <section id="lessons" className="mx-auto max-w-5xl px-6 py-20">
+    <section id="lessons" className="mx-auto max-w-5xl px-4 sm:px-6 py-12 sm:py-20">
       <SectionHeading
         title="Lessons"
         subtitle="Learn the building blocks of Markdown."

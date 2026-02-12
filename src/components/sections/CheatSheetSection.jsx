@@ -3,7 +3,7 @@ import { cheatsheet } from "../../data/cheatsheet";
 
 export default function CheatSheetSection() {
   return (
-    <section id="cheatsheet" className="mx-auto max-w-5xl px-6 py-20">
+    <section id="cheatsheet" className="mx-auto max-w-5xl px-4 sm:px-6 py-12 sm:py-20">
       <SectionHeading
         title="Cheat Sheet"
         subtitle="Quick-reference syntax at a glance."
@@ -12,8 +12,8 @@ export default function CheatSheetSection() {
         <table className="w-full text-left text-sm">
           <thead>
             <tr className="border-b border-border bg-bg-card">
-              <th className="px-6 py-3 font-semibold">Syntax</th>
-              <th className="px-6 py-3 font-semibold">Description</th>
+              <th className="px-3 sm:px-6 py-2.5 sm:py-3 font-semibold">Syntax</th>
+              <th className="px-3 sm:px-6 py-2.5 sm:py-3 font-semibold">Description</th>
             </tr>
           </thead>
           <tbody>
@@ -22,12 +22,12 @@ export default function CheatSheetSection() {
                 key={i}
                 className="border-b border-border last:border-none hover:bg-bg-card/50 transition-colors"
               >
-                <td className="px-6 py-3">
-                  <code className="rounded bg-bg-card px-2 py-0.5 font-mono text-primary-400">
+                <td className="px-3 sm:px-6 py-2.5 sm:py-3">
+                  <code className="rounded bg-bg-card px-2 py-0.5 font-mono text-primary-400 text-xs sm:text-sm">
                     {row.syntax}
                   </code>
                 </td>
-                <td className="px-6 py-3 text-text-secondary">
+                <td className="px-3 sm:px-6 py-2.5 sm:py-3 text-text-secondary">
                   {row.description}
                 </td>
               </tr>
