@@ -1,0 +1,16 @@
+export const cheatsheet = [
+  { syntax: "# H1", description: "Heading level 1" },
+  { syntax: "## H2", description: "Heading level 2" },
+  { syntax: "### H3", description: "Heading level 3" },
+  { syntax: "**bold**", description: "Bold text" },
+  { syntax: "*italic*", description: "Italic text" },
+  { syntax: "~~strike~~", description: "Strikethrough" },
+  { syntax: "[text](url)", description: "Hyperlink" },
+  { syntax: "![alt](url)", description: "Image" },
+  { syntax: "- item", description: "Unordered list" },
+  { syntax: "1. item", description: "Ordered list" },
+  { syntax: "`code`", description: "Inline code" },
+  { syntax: "```lang", description: "Fenced code block" },
+  { syntax: "> quote", description: "Blockquote" },
+  { syntax: "---", description: "Horizontal rule" },
+];
