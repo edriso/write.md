@@ -1,6 +1,6 @@
 # write.md
 
-A simple, beginner-friendly app for learning Markdown. Dark theme, interactive examples, and a live preview editor.
+A simple, beginner-friendly app for learning Markdown and technical writing. Dark theme, interactive examples, and a live preview editor.
 
 ## Setup
 
@@ -19,10 +19,12 @@ npm run build
 
 ## How It Works
 
-- Single page with smooth-scrolling sections: **Lessons**, **Cheat Sheet**, and **Git Tips**
-- Each lesson has a **"Try it"** button that opens a split editor/preview modal
-- Type markdown on the left, see the rendered output on the right
-- Copy your work with one click
+Two pages connected by React Router:
+
+- **Markdown** (`/`) — Lessons, cheat sheet, and git tips with interactive "Try it" examples
+- **Technical Writing** (`/technical-writing`) — Golden rules, ready-to-use templates, and language tips for writing great dev posts
+
+Both pages share a live split editor/preview modal — type markdown on the left, see rendered output on the right.
 
 ## Modifying Content
 
@@ -31,6 +33,7 @@ All content lives in `src/data/`:
 - `lessons.js` — the 6 lesson cards (title, description, example markdown)
 - `cheatsheet.js` — syntax reference table entries
 - `gitTips.js` — git commit message tips and example
+- `technicalWriting.js` — writing tips, post templates, word bank, and grammar tips
 
 To add a lesson, add an entry to the `lessons` array in `lessons.js`. Each entry needs an `id`, `title`, `description`, `icon` (must match a lucide-react icon name mapped in `LessonCard.jsx`), and `example` (the markdown string pre-filled in the modal).
 
@@ -45,6 +48,8 @@ Key variables:
 | `--color-primary-400` | Primary accent (light)   | `#c084fc` |
 | `--color-primary-500` | Primary accent           | `#a855f7` |
 | `--color-primary-600` | Primary accent (dark)    | `#9333ea` |
+| `--color-accent-400`  | Amber accent (light)     | `#fbbf24` |
+| `--color-accent-500`  | Amber accent             | `#f59e0b` |
 | `--color-bg`          | Page background          | `#0f0d17` |
 | `--color-bg-card`     | Card background          | `#1e1b2e` |
 | `--color-text-primary`| Main text color          | `#f1f0f5` |
@@ -57,6 +62,7 @@ Fonts are loaded from Google Fonts in `index.html` — **Inter** for body text a
 
 - React 19 + Vite
 - Tailwind CSS v4
+- React Router (client-side routing)
 - react-markdown (live preview)
 - lucide-react (icons)
 
@@ -64,4 +70,4 @@ Fonts are loaded from Google Fonts in `index.html` — **Inter** for body text a
 
 - This is a dark-theme-only app — no light mode toggle
 - The Try modal uses `createPortal` and locks body scroll while open
-- No routing — it's a single page with anchor links
+- See [how-the-live-playground-works.md](./how-the-live-playground-works.md) for a breakdown of the live editor/preview feature
