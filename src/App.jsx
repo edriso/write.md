@@ -1,11 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
-import Hero from "./components/layout/Hero";
 import Footer from "./components/layout/Footer";
-import LessonsSection from "./components/sections/LessonsSection";
-import CheatSheetSection from "./components/sections/CheatSheetSection";
-import GitTipsSection from "./components/sections/GitTipsSection";
 import TryModal from "./components/modal/TryModal";
+import Home from "./pages/Home";
+import TechnicalWriting from "./pages/TechnicalWriting";
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 function App() {
   const [modal, setModal] = useState(null);
@@ -16,12 +25,16 @@ function App() {
 
   return (
     <>
+      <ScrollToTop />
       <Navbar />
       <main>
-        <Hero />
-        <LessonsSection onTry={openModal} />
-        <CheatSheetSection />
-        <GitTipsSection onTry={openModal} />
+        <Routes>
+          <Route path="/" element={<Home onTry={openModal} />} />
+          <Route
+            path="/technical-writing"
+            element={<TechnicalWriting onTry={openModal} />}
+          />
+        </Routes>
       </main>
       <Footer />
 

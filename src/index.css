@@ -7,6 +7,11 @@
   --color-primary-600: #9333ea;
   --color-primary-700: #7e22ce;
 
+  /* Amber accent palette (for technical writing) */
+  --color-accent-400: #fbbf24;
+  --color-accent-500: #f59e0b;
+  --color-accent-600: #d97706;
+
   /* Dark surface palette */
   --color-surface-800: #1e1b2e;
   --color-surface-900: #13111c;
